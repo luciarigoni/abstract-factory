@@ -4,6 +4,8 @@ import org.example.aircrafts.Airplane;
 import org.example.aircrafts.IAirCraft;
 import org.example.landvehicles.Car;
 import org.example.landvehicles.ILandVehicle;
+import org.example.watercraft.Boat;
+import org.example.watercraft.IWaterCraft;
 
 public class UberTransport implements ITransportFactory{
     @Override
@@ -14,5 +16,10 @@ public class UberTransport implements ITransportFactory{
     @Override
     public IAirCraft createTransportAircraft() {
         return new Airplane();
+    }
+
+    @Override
+    public IWaterCraft createTransportWatercraft() {
+        return new Boat();
     }
 }

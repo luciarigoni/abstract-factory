@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.app.Application;
+import org.example.factories.BoatTransport;
 import org.example.factories.ITransportFactory;
 import org.example.factories.NineNineTransport;
 import org.example.factories.UberTransport;
@@ -16,8 +17,11 @@ public class Main {
         if (company == "uber"){
             factory = new UberTransport();
         }
-        else {
+        if(company == "99") {
             factory = new NineNineTransport();
+        }
+        else{
+            factory = new BoatTransport();
         }
         application = new Application(factory);
         return application;
